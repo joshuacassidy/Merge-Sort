@@ -1,10 +1,9 @@
 public class MergeSort {
-    private int[] arr;
-    private int[] temp;
+    private Comparable[] arr,temp;
 
-    public MergeSort(int[] arr) {
+    public MergeSort(Comparable[] arr) {
         this.arr = arr;
-        this.temp = new int[arr.length];
+        this.temp = new Comparable[arr.length];
     }
 
     public void sort(int p, int r) {
@@ -26,7 +25,7 @@ public class MergeSort {
 
 
         for (leftIndex =p, rightIndex = q + 1, arrIndex=p; (leftIndex <= q) && (rightIndex <= r); arrIndex++) {
-            if (temp[leftIndex] <= temp[rightIndex]) {
+            if (temp[leftIndex].compareTo(temp[rightIndex]) <= 0) {
                 arr[arrIndex] = temp[leftIndex];
                 leftIndex++;
             } else {
@@ -42,7 +41,7 @@ public class MergeSort {
     }
 
     public void traverse() {
-        for (int i: arr) {
+        for (Comparable i: arr) {
             System.out.print(i + " ");
         }
     }
